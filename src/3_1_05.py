@@ -6,15 +6,14 @@ def lista():
 
 def lista_inversa(lista):
     list_inversa = ', '.join(map(str, reversed(lista)))
-    print(list_inversa)
+    
+    return list_inversa
 
 
 def main():
-    # Obtener la lista de números
     numeros = lista()
 
-    # Imprimir la lista en orden inverso separados por comas
-    lista_inversa(numeros)
+    print(lista_inversa(numeros))
 
 
 if __name__ == "__main__":
