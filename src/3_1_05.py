@@ -5,7 +5,7 @@ def lista():
 
 
 def lista_inversa(lista):
-    list_inversa = ', '.join(map(str, reversed(lista)))
+    list_inversa = ", ".join(map(str, reversed(lista)))
     
     return list_inversa
 

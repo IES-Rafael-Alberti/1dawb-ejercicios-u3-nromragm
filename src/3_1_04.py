@@ -1,7 +1,7 @@
 def pedir_numeros_ganadores():
-    # Lista para almacenar los números ganadores
+
     numeros = []
-    # Preguntar al usuario los números ganadores
+
     for i in range(6):
         salir = False
         while not salir:
@@ -25,7 +25,7 @@ def pedir_numeros_ganadores():
 def pedir_reintegro():
     reintegro = []
     salir = False
-    #Preguntar al usuario el reintegro
+
     while not salir:
         try:    
             reintegro = int(input("Introduce un reintegro del 1 al 9: "))
@@ -41,9 +41,9 @@ def pedir_reintegro():
 
 
 def numeros_ordenados(numeros):
-    # Ordenar la lista de números de menor a mayor
+
     numeros_ordenados = sorted(numeros)
-    # Mostrar los números ordenados por pantalla
+
     resultado = "\nNúmeros ganadores ordenados:\n"
 
     for numero in numeros_ordenados:

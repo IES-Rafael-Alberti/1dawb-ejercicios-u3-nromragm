@@ -10,29 +10,47 @@ def pedir_notas(asignaturas):
                 if nota < 0 or nota > 10:
                     raise ValueError
                 else:
-                    notas.append(nota)
+                    notas.append((asignatura, nota))
                     salir = True
             except:
                 print("Introduce una nota valida")    
 
     return notas
 
-def mostrar_notas(asignaturas, notas):
-    print("")
-    resultado = ""
 
-    for i in range(len(asignaturas)):
-        resultado += f"En {asignaturas[i]} has sacado un {notas[i]}.\n"
+def asignaturas_suspendidas(notas):
+    suspendidas = []
+    
+    for asignatura, nota in notas:
+        if nota < 5:
+            suspendidas.append(asignatura)
 
-    return resultado    
+    if len(suspendidas) >= 1:
+
+        resultado = print("Asignaturas supendidas: ")
+        
+        return resultado, suspendidas
+    
+    else:
+        resultado = print("No has suspendido ninguna asignatura")
+
+        return resultado
+    
+
+
+
 
 def main():
 
     asignaturas = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
 
+
     notas = pedir_notas(asignaturas)
 
-    print(mostrar_notas(asignaturas, notas))
+
+    print(asignaturas_suspendidas(notas))
+
+
 
 if __name__ == "__main__":
     main()
