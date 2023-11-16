@@ -25,31 +25,25 @@ def asignaturas_suspendidas(notas):
         if nota < 5:
             suspendidas.append(asignatura)
 
-    if len(suspendidas) >= 1:
+    if len(suspendidas) == 0:
+        resultado = print("No has suspendido ninguna asignatura")
 
+        return resultado
+
+
+    else:
         resultado = print("Asignaturas supendidas: ")
         
         return resultado, suspendidas
     
-    else:
-        resultado = print("No has suspendido ninguna asignatura")
-
-        return resultado
-    
-
-
-
 
 def main():
 
     asignaturas = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
 
-
     notas = pedir_notas(asignaturas)
 
-
     print(asignaturas_suspendidas(notas))
-
 
 
 if __name__ == "__main__":

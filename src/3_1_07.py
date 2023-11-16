@@ -6,7 +6,7 @@ def eliminar_multiplos_de_tres(abcedario):
 
 def main():
 
-    abecedario = list("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ")
+    abecedario = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 
     print(eliminar_multiplos_de_tres(abecedario))
