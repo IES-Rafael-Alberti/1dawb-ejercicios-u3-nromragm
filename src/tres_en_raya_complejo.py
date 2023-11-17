@@ -190,7 +190,7 @@ def jugar(tablero: tuple):
         
         if verificar_ganador(tablero, turno) == True:
             mostrar_tablero(tablero)
-            print(f"jugador {turno} ha ganado")
+            print(f"Jugador {turno} ha ganado")
             salir = True
 
 
