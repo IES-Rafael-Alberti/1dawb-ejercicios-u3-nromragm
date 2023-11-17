@@ -15,16 +15,12 @@ def pedir_divisa():
 
     return divisa
 
+
 def comprobar_divisa(divisa, divisas_simbolo):
-    return divisas_simbolo.get(divisa)
-
-def mostrar_simbolo(divisa, simbolo):
-
-    if simbolo:
-        print(f"El simbolo de {divisa} es {simbolo}")
-
+    if divisa in divisas_simbolo:
+        print (f"El simbolo de {divisa} es {divisas_simbolo[divisa]}")
     else:
-        print(f"La divisa {divisa} no esta en el diccionario")    
+        print(f"La divisa {divisa} no esta en el diccionario")
 
 
 def main():
@@ -33,9 +29,9 @@ def main():
 
     divisa = pedir_divisa()
 
-    simbolo = comprobar_divisa(divisa, divisas_simbolo)
+    comprobar_divisa(divisa, divisas_simbolo)
 
-    mostrar_simbolo(divisa, simbolo)
+
 
 if __name__ == "__main__":
     main()
