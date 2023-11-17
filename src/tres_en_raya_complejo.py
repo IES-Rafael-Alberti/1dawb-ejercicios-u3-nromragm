@@ -105,15 +105,15 @@ def comprobar_movimiento(tablero, fila, columna) -> bool:
 
 
 def colocar_ficha(tablero: tuple, turno: int, ronda: int):
-    pos_ficha = {"fila": None, "columna": None}
+    posicion_ficha = {"fila": None, "columna": None}
     loop = True
     while loop:
             
         print(f"Jugador {turno}")
-        pos_ficha["fila"], pos_ficha["columna"] = pedir_posicion()
+        posicion_ficha["fila"], posicion_ficha["columna"] = pedir_posicion()
 
-        if tablero[pos_ficha["fila"]][pos_ficha["columna"]] == 0:
-            tablero[pos_ficha["fila"]][pos_ficha["columna"]] = turno
+        if tablero[posicion_ficha["fila"]][posicion_ficha["columna"]] == 0:
+            tablero[posicion_ficha["fila"]][posicion_ficha["columna"]] = turno
             loop = False
         else:
             print("La casilla ya esta ocupada")
