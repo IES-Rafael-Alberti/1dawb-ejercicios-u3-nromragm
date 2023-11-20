@@ -5,7 +5,7 @@ def pedir_divisa():
         try:
             divisa = input("Introduce una divisa: ")
             if divisa.isalpha():
-                divisa = divisa.replace(" ", "").lower().title()
+                divisa = divisa.replace(" ", "").capitalize()
                 salir = True
             else:
                 raise ValueError
