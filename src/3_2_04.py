@@ -6,25 +6,31 @@ def pedir_fecha():
     while not todo_ok:
         try:
             fecha = input("Introduce una fecha en formato dd/mm/yyy: ")
-            list_fecha = fecha.split("/")
-            if len(list_fecha[2]) == 4 and len(list_fecha[1]) and len(list_fecha[0] == 2):
-                todo_ok = True
+            dia, mes, año = fecha.split("/")
+            if len(año) == 4 and len(mes) == 2 and len(dia) == 2:
+                if int(dia) < 0 or int(dia) > 31:
+                    raise ValueError
+                else:
+                    if int(mes) < 0 or int(mes) > 12:
+                        raise ValueError
+                    else:
+                        todo_ok = True
             else:
                 raise ValueError
         except:
             print("Introduce una fecha valida")
 
-    return fecha
+    return dia, mes, año
 
 
-def mostrar_fecha(fecha):
-    nueva_fecha = 
+def mostrar_fecha(dia, mes, año):
+    print(f"{dia} de {MESES[int(mes)]} de {año}")
 
 
 def main():
-    fecha = pedir_fecha()
+    dia, mes, año = pedir_fecha()
 
-    mostrar_fecha(fecha)
+    mostrar_fecha(dia, mes, año)
 
 
 if __name__ == "__main__":

@@ -17,11 +17,13 @@ def mostrar_sin_repeticiones(alumnos_primaria, alumnos_secundaria):
 
 def mostrar_repetidos(alumnos_primaria, alumnos_secundaria):
     repetidos = set(alumnos_primaria) & set(alumnos_secundaria)
+    
     print(f"Nombres que se repiten entre primaria y secundaria:\n{repetidos}")
 
 
-def mostrar_no_repetidos(nombres1, nombres2):
-    no_repetidos = set(nombres1) - set(nombres2)
+def mostrar_no_repetidos(alumnos_primaria, alumnos_secundaria):
+    no_repetidos = set(alumnos_primaria) - set(alumnos_secundaria)
+    
     print("Nombres de primaria que no se repiten en secundaria:")
     print(no_repetidos)
 

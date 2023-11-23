@@ -1,3 +1,4 @@
+"""
 def palindromo(palabra):
     salir = True
     cont1 = 0
@@ -12,13 +13,24 @@ def palindromo(palabra):
         cont2 -= 1
     
     return palindromo
+"""
+
+def palindromo(palabralower):
+    if palabralower == palabralower[::-1]:
+        palindromo = True
+
+    else:
+        palindromo = False
+
+    return palindromo   
 
 
 def main():
 
     palabra = input("Introduce una palabra: ")
-    palabra = list(palabra)
-    if palindromo(palabra) == True:
+    palabralower = palabra.lower()
+    palabralower = list(palabralower)
+    if palindromo(palabralower) == True:
         print(f"{palabra} es un palindromo")
 
     else:
