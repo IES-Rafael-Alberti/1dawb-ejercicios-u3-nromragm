@@ -77,22 +77,15 @@ def generar_tablero() -> list:
     """
     tablero = [[VACIO for _ in range(COLUMNAS)] for _ in range(FILAS)]
     #TODO: colocar las minas en el tablero
-    colocar_minas(tablero)
+    ???
     calcular_numeros(tablero)
     return tablero
 
 
-def colocar_minas(tablero):
+def colocar_minas:
     """
     Esta función coloca las minas en el tablero de juego. Se asegura de que el número de minas colocadas sea igual a NUMERO_MINAS.
     """
-    while minas_colocadas < NUMERO_MINAS:
-        fila = random.randint(0, FILAS - 1)
-        columna = random.randint(0, COLUMNAS - 1)
-
-        if tablero[fila][columna] != MINA:
-            tablero[fila][columna] = MINA
-            minas_colocadas += 1
 
 
 def calcular_numeros(tablero):
@@ -117,12 +110,7 @@ def contar_minas_adyacentes(tablero, fila, columna):
     :return: número de minas adyacentes a la celda(i,j) seleccionada
     """
     minas = 0
-    #???
-    for i in range(-1, 2):
-        for j in range(-1, 2):
-            if 0 <= fila + i < FILAS and 0 <= columna + j < COLUMNAS:
-                if tablero[fila + i][columna + j] == MINA:
-                    minas += 1
+    ???
     return minas
 
 
@@ -131,13 +119,7 @@ def imprimir_tablero(tablero):
     Esta función toma el tablero como argumento e imprime cada celda del tablero.
     :param tablero: tablero de juego
     """
-    #???
-    print("  " + " ".join(str(i + 1) for i in range(COLUMNAS)))
-    for fila in range(FILAS):
-        print(str(fila + 1), end=" ")
-        for columna in range(COLUMNAS):
-            print(tablero[fila][columna], end=" ")
-        print()
+    ???
 
 
 def imprimir_tablero_oculto(tablero, celdas_reveladas, celdas_maracadas):
@@ -171,18 +153,15 @@ def pedir_accion():
     """
     accion_valida = False
     while not accion_valida:
-        try:
-            accion = input("Elige una acción (R para revelar, M para marcar): ").upper()
-            fila = int(input("Ingresa la fila (1-8): ")) - 1
-            columna = int(input("Ingresa la columna (1-8): ")) - 1
 
-            if accion in [REVELAR, MARCAR] and 0 <= fila < FILAS and 0 <= columna < COLUMNAS:
-                accion_valida = True
-            else:
-                print("Acción inválida o posición fuera de rango. Inténtalo de nuevo.")
-        except ValueError:
-            print("Ingresa un número válido.")
+        accion = input("Elige una acción (R para revelar, M para marcar): ").upper()
+        fila = input("Ingresa la fila (1-8): ") - 1
+        columna = input("Ingresa la columna (1-8): ") - 1
 
+        if accion in [REVELAR, MARCAR] and 0 <= fila < FILAS and 0 <= columna < COLUMNAS:
+            accion_valida = True
+        else:
+            print("Acción inválida. Inténtalo de nuevo.")
     return accion, fila, columna
 
 
@@ -199,14 +178,12 @@ def revelar_celda(tablero, celdas_reveladas, celdas_marcadas, fila, columna) -> 
     :return: False si la celda contiene una mina, True en caso contrario
     """
     if tablero[fila][columna] == MINA:  # La celda contiene una mina
-        return False
+        revelada = False
     elif tablero[fila][columna] != VACIO:  # La celda contiene un número
         celdas_reveladas.add((fila, columna))
         celdas_marcadas.discard((fila, columna))
     else:  # La celda está vacía
         revelar_celdas_vacias(tablero, celdas_reveladas, celdas_marcadas, fila, columna)
-    return True
-
 
 
 def revelar_celdas_vacias(tablero, celdas_reveladas, celdas_marcadas, fila, columna):
